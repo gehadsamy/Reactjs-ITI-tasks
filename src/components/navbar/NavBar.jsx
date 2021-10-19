@@ -18,8 +18,8 @@ import {
 
 function NavBar() {
   return (
-    <MDBNavbar expand="lg" light bgColor="light" className="m-2 p-4">
-      <MDBContainer fluid >
+    <MDBNavbar expand="lg" light bgColor="light" className="m-2 p-4" >
+      <MDBContainer fluid  >
         <MDBNavbarToggler
           type="button"
           data-target="#navbarCenteredExample"
@@ -33,9 +33,9 @@ function NavBar() {
         <MDBCollapse
           navbar
           center
-          id="navbarCenteredExample"
+          id="navbarCenteredExample" 
         >
-          <MDBNavbarNav fullWidth={false} className="mb-2 mb-lg-0">
+          <MDBNavbarNav fullWidth={false} className="mb-2 mb-lg-0" style = {{background : '#20232a !important'}}>
             <MDBNavbarItem>
               <MDBNavbarLink aria-current="page" href="/">Home</MDBNavbarLink>
             </MDBNavbarItem>

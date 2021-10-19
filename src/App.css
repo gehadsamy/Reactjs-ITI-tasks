@@ -53,3 +53,10 @@
     transform: rotate(360deg);
   }
 }
+
+.spinner{
+  /* font-size: 10rem !important;
+  width: 30rem !important; */
+  text-align: center;
+  /* margin: 2rem auto !important; */
+}
