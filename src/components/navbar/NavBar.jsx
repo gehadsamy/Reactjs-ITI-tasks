@@ -50,7 +50,12 @@ function NavBar() {
             <MDBNavbarItem>
               <MDBNavbarLink href="/todo">Todo-list</MDBNavbarLink>
             </MDBNavbarItem>
-
+            <MDBNavbarItem>
+              <MDBNavbarLink href="/Registration">Registration</MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink href="/Login">Login</MDBNavbarLink>
+            </MDBNavbarItem>
           </MDBNavbarNav>
         </MDBCollapse>
       </MDBContainer>

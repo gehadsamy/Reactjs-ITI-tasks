@@ -6,11 +6,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { store } from './Redux/count';
-import { store_todo } from './Redux/Todo';
+// import { store_todo } from './Redux/Todo';
 // import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store,store_todo}>
+    <Provider store={store}>
       <App /> 
     </Provider>
 
