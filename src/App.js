@@ -11,11 +11,12 @@ import '@fortawesome/fontawesome-free/css/all.min.css'; import
 'mdbreact/dist/css/mdb.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ProductItem from "./components/shop/product-item";
-import Counter from "./views/counter/Counter";
-import TodoList from "./views/todo/Todo";
+// import Counter from "./views/counter/Counter";
+import ToDo from "./components/todo/Todo";
 import Home from "./components/Home/Home";
 import Login from "./forms/Login";
-import Registration from "./forms/Registration/Registration"
+import Registration from "./forms/Registration/Registration";
+import Counter from "./views/counter/Counter";
 export default class App extends Component {
  
 
@@ -30,6 +31,7 @@ export default class App extends Component {
           <Route path="/products" component={EcommercePage}></Route>
           <Route path="/product/:id" component={ProductItem}></Route>
           <Route path="/Counter" component={Counter}></Route>
+          <Route path="/Todo" component={ToDo}></Route>
           <Route path="/Login" component={Login}></Route>
           <Route path="/Registration" component={Registration}></Route>
 

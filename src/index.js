@@ -5,7 +5,7 @@ import App from './App';
  
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { store } from './Redux/count';
+import { store } from './Redux/store';
 // import { store_todo } from './Redux/Todo';
 // import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 ReactDOM.render(
