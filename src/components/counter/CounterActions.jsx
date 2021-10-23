@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { decrementCount, incrementCount } from "../../Redux/count";
-
+import { Button } from "react-bootstrap";
 const CounterActions = () => {
 
   const dispatch = useDispatch();
@@ -15,13 +15,20 @@ const CounterActions = () => {
   
   return (
     <>
-      <div className="btn-wrapper w-100">
-        <button className="btn btn-dark" onClick={increment}>
-          Increment +
-        </button>
-        <button className="btn btn-light" onClick={decrement}>
-          decrement -
-        </button>
+      <div  md="auto count__body">
+     
+            <div className="count__app">
+            <div className="buttons">
+            <Button  variant="outline-danger" onClick={increment}>
+         +
+        </Button>
+        <Button  variant="outline-danger" onClick={decrement}>
+         -
+        </Button>
+            </div>
+         
+              </div>
+    
       </div>
     </>
   );

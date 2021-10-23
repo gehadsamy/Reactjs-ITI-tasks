@@ -12,7 +12,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css'; import
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ProductItem from "./components/shop/product-item";
 import Counter from "./views/counter/Counter";
-import TodoList from "./views/todo/Todo";
+import ToDo from "./components/todo/Todo";
 import Home from "./components/Home/Home";
 export default class App extends Component {
  
@@ -28,7 +28,7 @@ export default class App extends Component {
           <Route path="/products" component={EcommercePage}></Route>
           <Route path="/product/:id" component={ProductItem}></Route>
           <Route path="/Counter" component={Counter}></Route>
-          <Route component={TodoList} path="/todo" />
+          <Route path="/Todo" component={ToDo}></Route>
 
         </Switch>
         
