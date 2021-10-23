@@ -17,7 +17,7 @@ const ToDo = () => {
     }
 
     return (
-        <div className="text-center py-2 todo-wrapper container">
+        <div className="text-center py-2 todo-wrapper container d-flex">
             <TodoForm addTodo={addTodo} />
             <TodoList todos={toDoState} deleteTodo={deleteTodo} />
         </div>
