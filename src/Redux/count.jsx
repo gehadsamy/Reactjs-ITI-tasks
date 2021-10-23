@@ -1,5 +1,3 @@
-import { createStore } from "redux"
-
 const INCREMENT_COUNT = "INCREMENT_COUNT"
 const DECREMENT_COUNT = "DECREMENT_COUNT"
 //action
@@ -25,7 +23,7 @@ export const initialState = {
 
 //reducer 
 
-const counterreducer = (state = initialState, action) => {
+export const counterreducer = (state = initialState, action) => {
     switch (action.type) {
         case INCREMENT_COUNT:
             return { ...state, count: state.count + action.payload };
@@ -39,4 +37,4 @@ const counterreducer = (state = initialState, action) => {
 
 // store 
 
-export const store = createStore(counterreducer);
+// export default counterreducer;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Count from "../../components/counter/Count";
 import CounterActions from "../../components/counter/CounterActions";
@@ -8,7 +8,7 @@ const Counter = () => {
   // const count=0;
 
 
-  const CountState = useSelector (state => state);
+  const CountState = useSelector (state => state.counterreducer.count);
   
   const dispatch = useDispatch();
   const increment = () => {
@@ -19,8 +19,9 @@ const Counter = () => {
   };
   return (
     <section className="counter">
-        <Count count={CountState} />
-       <CounterActions/>
+               <Count count={CountState} />
+
+       <CounterActions> </CounterActions>
     </section>
 
   );
