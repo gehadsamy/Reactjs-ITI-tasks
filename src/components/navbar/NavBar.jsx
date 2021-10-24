@@ -15,51 +15,43 @@ import {
   MDBDropdownLink,
 } from "mdb-react-ui-kit";
 // import { Link } from "react-router-dom";
+import Box from '@mui/material/Box';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
+// import EcommercePage from '../shop/EcommercePage';
 
-function NavBar() {
+import { MemoryRouter, Route, Link, useRouteMatch } from 'react-router-dom';
+import {Switch } from "react-router-dom";
+
+function NavBar () {
+  const routeMatch = useRouteMatch(['/products', '/Counter', '/Todo', '/Login', '/Registration','/']);
+  const currentTab = routeMatch?.path;
+
   return (
-    <MDBNavbar expand="lg" light bgColor="light" className="m-2 p-4" >
-      <MDBContainer fluid  >
-        <MDBNavbarToggler
-          type="button"
-          data-target="#navbarCenteredExample"
-          aria-controls="navbarCenteredExample"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <MDBIcon icon="bars" fas />
-        </MDBNavbarToggler>
+    <>
+      <div style={{'display': 'flex', 'justifyContent':'center', 'margin': '1rem'}}>
+        <Tabs value={currentTab} style={{'width': 'fit-content'}} >
+          <Tab label="Ecommerce Page" href="/products" value="/products" to="/products"  component={Link}/>
+          <Tab label="Gehad protofolio" href="/" value="/" to="/" component={Link} />
+          <Tab label="Simple Counter" value="/Counter" to="/Counter" href="/Counter" component={Link}/>
+          <Tab label="Todo list" value="/Todo" to="/Todo" href="/Todo" component={Link}/>
+          <Tab label="Login" value="/Login" to="/Login" href="/Login" component={Link}/>
+          <Tab label="Registration" value="/Registration" to="/Registration" href="/Registration" component={Link}/>
+        </Tabs>
+      </div>
 
-        <MDBCollapse
-          navbar
-          center
-          id="navbarCenteredExample" 
-        >
-          <MDBNavbarNav fullWidth={false} className="mb-2 mb-lg-0" style = {{background : '#20232a !important'}}>
-            <MDBNavbarItem>
-              <MDBNavbarLink aria-current="page" href="/">Home</MDBNavbarLink>
-            </MDBNavbarItem>
-       
-
-            <MDBNavbarItem>
-              <MDBNavbarLink href="/Counter">Counter</MDBNavbarLink>
-            </MDBNavbarItem>
-            <MDBNavbarItem>
-              <MDBNavbarLink href="/products">E-commerce</MDBNavbarLink>
-            </MDBNavbarItem>
-            <MDBNavbarItem>
-              <MDBNavbarLink href="/todo">Todo-list</MDBNavbarLink>
-            </MDBNavbarItem>
-            <MDBNavbarItem>
-              <MDBNavbarLink href="/Registration">Registration</MDBNavbarLink>
-            </MDBNavbarItem>
-            <MDBNavbarItem>
-              <MDBNavbarLink href="/Login">Login</MDBNavbarLink>
-            </MDBNavbarItem>
-          </MDBNavbarNav>
-        </MDBCollapse>
-      </MDBContainer>
-    </MDBNavbar>
+     <MemoryRouter initialEntries={['/products']} initialIndex={1}>
+       <Box sx={{ width: '100%' }}>
+         <Route>
+           {({ location }) => (
+             <Typography variant="body2" sx={{ pb: 2 }} color="text.secondary">
+             </Typography>
+           )}
+         </Route>
+       </Box>
+     </MemoryRouter>
+    </>
   );
 }
 
