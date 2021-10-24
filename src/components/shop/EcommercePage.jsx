@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 
 import {  MDBRow, MDBCol, MDBCard, MDBCardImage, MDBCardBody, MDBBadge } from "mdb-react-ui-kit";
 import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
 
 function EcommercePage() {
     const [products , setProducts] = useState([]);
@@ -21,17 +22,20 @@ function EcommercePage() {
 
 return (
     <div className="container ">
-        <h1>hello</h1>
-        <MDBRow className="product  d-flex">
+        {/* <h1>hello</h1> */}
+        <MDBRow className="product">
         {products.map (product => {
         return (
-                <MDBCol key={product.id} lg="3" md="4" className="mb-lg-3 mb-4 h-100">
-                    <MDBCard className="align-items-center p-3">
-                        <MDBCardImage
-                            src={product.image}
-                            alt="sample photo"
-                            overlay="white-slight" />
-                        <MDBCardBody className="text-center">
+                <MDBCol key={product.id} className="mb-3 col-md-4 col-lg-3 col-sm-6 col-12">
+                    <MDBCard className="align-items-center py-3 px-2 h-100">
+                        <Link to={`/product/${product.id}`} className="text-center">
+                            <MDBCardImage
+                                src={product.image}
+                                alt="sample photo"
+                                overlay="white-slight" style={{'width':'50%'}} />
+                        </Link>
+                        
+                        <MDBCardBody className="text-center" style={{'padding': '0', 'paddingTop': '20px'}} >
                             <Link to={`/product/${product.id}`} className="grey-text">
                                 <h5>{product.title}</h5>
                             </Link>
@@ -48,7 +52,11 @@ return (
                             <h4 className="font-weight-bold blue-text">
                                 <strong>{product.price}</strong>
                             </h4>
+                            
                         </MDBCardBody>
+                        <div className="d-flex justify-content-center align-items-center">
+                            <Button>Add to Cart</Button>
+                        </div>
                     </MDBCard>
                 </MDBCol>
         )
