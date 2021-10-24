@@ -35,35 +35,33 @@ const ProductItem = ({ match }) => {
     <div>
       {product ? (
         <div className="w-100 d-flex justify-content-center mt-5">
-          <MDBCol key={product.id} lg="8" md="8">
-            <MDBCard className="d-flex flex-row align-items-center">
+          <MDBCol key={product.id} className="col-md-7">
+            <MDBCard className="d-flex flex-row align-items-center p-4">
               <MDBCardImage
                 src={product.image}
                 alt="sample photo"
                 overlay="white-slight"
-                className="img-fluid w-25 col-md-4 m-2"
+                className="img-fluid w-25 col-md-5 m-2"
               />
-              <MDBCardBody className="col-md-8">
-                <Link to={`/product/${product.id}`} className="grey-text">
-                  <h5>{product.title}</h5>
-                </Link>
-                <h5>
+              <MDBCardBody className="col-md-7 pl-5 h-100">
+                <h2 className="grey-text w-100 d-inline mr-3">{product.title}</h2>
+                <span style={{'position': 'relative', 'top': '-5px'}}>
+                  <MDBBadge style={{'fontSize':'100%'}} pill color="danger">
+                    NEW
+                  </MDBBadge>
+                </span>
+                <h3 className="mt-2">
                   <strong>
                     {product.category}
-                    <MDBContainer>
-                      <ReactStars
+                    <ReactStars
                         count={5}
-                        size={24}
+                        size={30}
                         isHalf={true}
                         value={product.rating.rate}
                         activeColor="#ffd700"
                       />
-                    </MDBContainer>
-                    <MDBBadge pill color="danger">
-                      NEW
-                    </MDBBadge>
                   </strong>
-                </h5>
+                </h3>
                 <h4 className="font-weight-bold blue-text">
                   <strong>{product.price}$</strong>
                 </h4>
