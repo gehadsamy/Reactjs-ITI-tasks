@@ -5,27 +5,27 @@ const TodoList = ({ todos, deleteTodo }) => {
         todos && todos.length > 0 ? (
             todos.map((todo, i) => {
                 return (
-                    <ul key={i} className="list-unstyled">
-                        <li className="border shadow">
-                            <div className="p-4 d-flex jusify-content-between align-items-center">
-                                <div className="col-8 text-start">
-                                    <p>Title : {todo.title}</p>
-                                    <p>Content : {todo.content}</p>
-                                </div>
-                                <p className="btn btn-danger ms-auto " onClick={() => { deleteTodo(todo) }}>Delete</p>
+                    <li key={i} className="border shadow mb-3">
+                        <div className="p-2 d-flex jusify-content-between align-items-center">
+                            <div className="col-md-10 text-start">
+                                <p>Title: {todo.title}</p>
+                                <p>Content: {todo.content}</p>
                             </div>
-                        </li>
-                    </ul>
+                            <a style={{'color':'red'}} onClick={() => { deleteTodo(todo) }}><i class="fas fa-trash"></i></a>
+                        </div>
+                    </li>
                 );
             })
         ) : (
-            <p className="h5 mx-5 text-muted">Sorry !! No items on the list ..</p>
+            <p className="h5 text-muted">Sorry !! No items on the list ..</p>
         );
 
     return (
-        <div className="text-left">
-            <h5 className="mx-5 text-muted">Todos List</h5>
-            {todosList}
+        <div className="text-left col-md-6 ml-3 col-12">
+            <h5 className="text-muted">Todos List</h5>
+            <ul className="list-unstyled">
+                {todosList}
+            </ul>
         </div>
     );
 

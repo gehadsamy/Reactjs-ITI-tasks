@@ -12,8 +12,8 @@ const TodoForm = ({ addTodo }) => {
     };
 
     return (
-        <div className="w-75 m-auto">
-            <h3 className="text-primary my-4">My TODO</h3>
+        <div className="w-75 m-auto col-md-6 col-12">
+            <h3 className="text-danger my-4">My TODO</h3>
 
             <form onSubmit={handleSubmission}>
                  <label className="h5"> Title</label>
